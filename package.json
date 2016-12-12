@@ -1,0 +1,45 @@
+{
+  "name": "offline",
+  "version": "1.0.0",
+  "description": "React / Redux offline boilerplate with service workers",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "npm-run-all --parallel security-check test:watch open:src",
+    "open:src": "babel-node buildScripts/srcServer.js",
+    "security-check": "nsp check",
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.spec.js\"",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amalv/offline.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "serviceworker"
+  ],
+  "author": "Amaro Marino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amalv/offline/issues"
+  },
+  "homepage": "https://github.com/amalv/offline#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.9",
+    "babel-preset-latest": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "chalk": "^1.1.3",
+    "express": "^4.14.0",
+    "html-webpack-plugin": "^2.24.1",
+    "mocha": "^3.2.0",
+    "npm-run-all": "^3.1.2",
+    "nsp": "^2.6.2",
+    "open": "^0.0.5",
+    "webpack-dev-middleware": "^1.8.4"
+  }
+}
